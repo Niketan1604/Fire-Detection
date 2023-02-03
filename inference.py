@@ -8,10 +8,10 @@ import glob
 import matplotlib.pyplot as plt
 import warnings
 warnings.filterwarnings('ignore')
-TEST_DIR = '/home/test/'
+TEST_DIR = '/content/Fire-Detection/test/'
 SAMPLES = 10
 
-PATH_TO_SAVED_MODEL="/home/my_model/saved_model"
+PATH_TO_SAVED_MODEL="/content/Fire-Detection/my_model/saved_model"
 
 print('Loading model...', end='')
 
@@ -21,7 +21,7 @@ detect_fn=tf.saved_model.load(PATH_TO_SAVED_MODEL)
 print('Done!')
 
 
-category_index=label_map_util.create_category_index_from_labelmap("/home/label_map.pbtxt",use_display_name=True)
+category_index=label_map_util.create_category_index_from_labelmap("/content/Fire-Detection/label_map.pbtxt",use_display_name=True)
 
 # img=['/home/models/research/test/img (1).jpg']
 
@@ -62,7 +62,7 @@ for image_path in img:
           max_boxes_to_draw=100,     
           min_score_thresh=.7,#0.0001      
           agnostic_mode=False)
-    # %matplotlib inline
+    %matplotlib inline
     plt.figure()
     plt.imshow(image_np_with_detections)
     print('Done')
@@ -76,5 +76,5 @@ for image_path in img:
     # output_path = f"/home/output/image_{count}.jpg"
     # print(image_path)
 
-    nimg = Image.fromarray(image_np_with_detections)
-    nimg.save('/home/output/'+image_path[11:])
+#     nimg = Image.fromarray(image_np_with_detections)
+#     nimg.save('/home/output/'+image_path[11:])
