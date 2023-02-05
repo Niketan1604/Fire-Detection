@@ -69,12 +69,6 @@ for image_path in img:
     plt.axis('off')
     plt.show()
 
-
-    #plt.figure(figsize=IMAGE_SIZE)
-    #plt.imshow(image_np)
-    #save to same folder as data input
-    # output_path = f"/home/output/image_{count}.jpg"
-    # print(image_path)
-
-#     nimg = Image.fromarray(image_np_with_detections)
-#     nimg.save('/home/output/'+image_path[11:])
+    # to save the output image 
+    nimg = Image.fromarray(image_np_with_detections)
+    nimg.save('/home/pi/Fire-Detection/output/'+'image_'+count+'.jpg')
